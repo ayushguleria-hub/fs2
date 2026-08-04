@@ -1,45 +1,49 @@
-// Dashboard.js
-
 import { decodeToken, logout } from "./auth";
-import "./App.css";
+import { users } from "./users";
 
 function Dashboard({ onLogout }) {
-  const user = decodeToken();
+
+  const token = decodeToken();
+
+  const currentUser = users.find(
+    (u) => u.id === token.id
+  );
 
   return (
-    <div className="dashboard-card">
-      <div className="dashboard-header">
-        <div>
-          <p className="eyebrow">Welcome back</p>
-          <h2>Dashboard</h2>
-          <p className="helper-text">Your session is active and ready.</p>
-        </div>
-        <button
-          className="secondary-button"
-          onClick={() => {
-            logout();
-            onLogout();
-          }}
-        >
-          Logout
-        </button>
-      </div>
 
-      <div className="info-grid">
-        <div className="info-card">
-          <strong>Username</strong>
-          <span>{user.username}</span>
-        </div>
-        <div className="info-card">
-          <strong>Role</strong>
-          <span>{user.role}</span>
-        </div>
-      </div>
+    <div style={{ textAlign: "center", marginTop: "100px" }}>
 
-      <p className="helper-text">
-        This demo shows a simple JWT-style authentication flow with a cleaner interface.
-      </p>
+      <h2>Dashboard</h2>
+
+      <h3>Welcome, {currentUser.name}</h3>
+
+      <hr />
+
+      <p><strong>Employee ID:</strong> {currentUser.id}</p>
+
+      <p><strong>Username:</strong> {currentUser.username}</p>
+
+      <p><strong>Designation:</strong> {currentUser.designation}</p>
+
+      <p><strong>Department:</strong> {currentUser.department}</p>
+
+      <p><strong>Email:</strong> {currentUser.email}</p>
+
+      <p><strong>Phone:</strong> {currentUser.phone}</p>
+
+      <br />
+
+      <button
+        onClick={() => {
+          logout();
+          onLogout();
+        }}
+      >
+        Logout
+      </button>
+
     </div>
+
   );
 }
 
