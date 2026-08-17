@@ -1,0 +1,137 @@
+.post-list-section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.post-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.post-list-header h2 {
+  margin: 0 0 5px;
+  color: #111827;
+  font-size: 22px;
+}
+
+.post-list-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.post-count {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.post-item-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.post-item-content h3 {
+  margin: 0 0 7px;
+  color: #111827;
+  font-size: 16px;
+}
+
+.post-item-content p {
+  margin: 5px 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.post-item-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.post-item-actions button {
+  border: 0;
+  border-radius: 7px;
+  padding: 8px 13px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.post-item-actions button:first-child {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.post-item-actions button:last-child {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.post-item-actions button:hover {
+  opacity: 0.85;
+}
+
+.empty-post-list {
+  padding: 40px 20px;
+  text-align: center;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.empty-post-list h3 {
+  margin: 0 0 8px;
+  color: #334155;
+}
+
+.empty-post-list p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+@media (max-width: 650px) {
+  .post-list-section {
+    padding: 16px;
+  }
+
+  .post-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .post-item-actions {
+    width: 100%;
+  }
+
+  .post-item-actions button {
+    flex: 1;
+  }
+}
